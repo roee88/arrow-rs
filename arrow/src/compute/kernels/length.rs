@@ -281,6 +281,7 @@ mod tests {
     }
 
     #[test]
+    #[cfg_attr(miri, ignore)] // https://github.com/apache/arrow-rs/issues/345
     fn bit_length_test_string() -> Result<()> {
         bit_length_cases()
             .into_iter()
